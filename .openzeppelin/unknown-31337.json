@@ -1,0 +1,128 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+    "txHash": "0x7f06a91cd7b77334788685056a2a5590c07a9e38e5eb550837a63ca1299c5f69"
+  },
+  "proxies": [
+    {
+      "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "txHash": "0xcfd133dc03f646f19012710d78b7c147cfae529fb67c92175f7276683c630279",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "txHash": "0x0e10f4e81d9b672e6b6b499235abdd46328116d6afa9289d5363e41a63c52645",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+      "txHash": "0x840e425df7fb06848a23491e67f36868131c3a811b5013b996921cbf977fe703",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "txHash": "0x71e1c88ffdf807587e6b826f07586a0b67bd324e3cea850f5cf002c5149ea30d",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+      "txHash": "0x2ffc49b2c48642cf81203732310516a30dfedf82892e4249fc46502cb5770134",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+      "txHash": "0xb7b59d45792b0c9a615adf78040d8ec074125c1bfd55af737ff2c4b4dde32769",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
+      "txHash": "0x7fd2f5b9d1f78d93716a8a7f0f5eace244448dbf70cbbf3cef8b602b6cf765cc",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "b96e2e243296a2ca020fed1c7b227c60ac46c7be465c3fb3aec8969003f880ca": {
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "txHash": "0x81916501e4a00c01a8c44aca684b14a64e8153c2764445812453555ee05c398e",
+      "layout": {
+        "storage": [
+          {
+            "label": "balances",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ContractV1",
+            "src": "contracts/Box.sol:7"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "925ac28bbf9839bef9f86ec5b41ec3785d913ce448340c01b8751ecba4a82e6f": {
+      "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      "txHash": "0xb68e9e89bca40f3c223470acef89ebfdf98d0f315f77ef7db1ca5de7690fc288",
+      "layout": {
+        "storage": [
+          {
+            "label": "_value",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "ContractV1",
+            "src": "contracts/Box.sol:8"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "8d6a76982c44e9df405668b28a1c8c63dd917bc57f6b1b6d43963bd99377dff8": {
+      "address": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+      "txHash": "0xb4918d75e50a7c28074c504deec477d3660f01a76bb4b93d40a1cf4517a82569",
+      "layout": {
+        "storage": [
+          {
+            "label": "balances",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "DepositFunds",
+            "src": "contracts/Box.sol:8"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}

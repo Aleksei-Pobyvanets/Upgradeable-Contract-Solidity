@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
 
-contract Box {
+contract BoxV2 {
     uint256 private _value;
 
     // Emitted when the stored value changes
@@ -19,5 +19,8 @@ contract Box {
     function retrieve() public view returns (uint256) {
         return _value;
     }
+   function increment() public {
+        _value = _value + 1;
+        emit ValueChanged(_value);
+    }
 }
-

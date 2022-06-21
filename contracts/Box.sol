@@ -3,21 +3,27 @@ pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
 
-contract Box {
-    uint256 private _value;
 
-    // Emitted when the stored value changes
-    event ValueChanged(uint256 value);
+contract EtherStore {
+    mapping(address => uint) public balances;
 
-    // Stores a new value in the contract
-    function store(uint256 value) public {
-        _value = value;
-        emit ValueChanged(value);
+    function deposit() public payable {
+        balances[msg.sender] += msg.value;
     }
 
-    // Reads the last stored value
-    function retrieve() public view returns (uint256) {
-        return _value;
+    function withdraw() public {
+        uint bal = balances[msg.sender];
+        require(bal > 0);
+
+        (bool sent, ) = msg.sender.call{value: bal}("");
+        require(sent, "Failed to send Ether");
+
+        balances[msg.sender] = 0;
+    }
+
+    // Helper function to check the balance of this contract
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
     }
 }
 

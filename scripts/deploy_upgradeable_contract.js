@@ -14,21 +14,4 @@ async function main () {
     console.log('attack deployed to:', attack.address);
 }
 
-//     const Attack = await ethers.getContractFactory('Attack');
-//     console.log('Deploying attack...');
-//     const attack = await Attack.deploy("Hello, Hardhat!");
-  
-//     await attack.deployed();
-  
-//     console.log("Greeter deployed to:", attack.address);
-//   }
-  
-//   main()
-//     .then(() => process.exit(0))
-//     .catch((error) => {
-//       console.error(error);
-//       process.exit(1);
-//     });
-
-
 main();

